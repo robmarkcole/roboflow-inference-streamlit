@@ -9,8 +9,8 @@ from io import BytesIO
 import numpy as np
 import matplotlib.pyplot as plt
 
-model = streamlit.sidebar.selectbox("select model", ["r-firenetclone--1"])
-access_token = streamlit.text_input("access_token")
+model = st.sidebar.selectbox("select model", ["r-firenetclone--1"])
+access_token = st.sidebar.text_input("access_token", "enter_access_token")
 
 st.sidebar.write('#### Select an image to upload.')
 uploaded_file = st.sidebar.file_uploader('',
