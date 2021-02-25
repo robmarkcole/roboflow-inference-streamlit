@@ -9,12 +9,6 @@ from io import BytesIO
 import numpy as np
 import matplotlib.pyplot as plt
 
-##########
-##### Set up sidebar.
-##########
-
-# Add in location to select image.
-
 model = streamlit.sidebar.selectbox("select model", ["r-firenetclone--1"])
 access_token = streamlit.text_input("access_token")
 
@@ -28,10 +22,6 @@ uploaded_file = st.sidebar.file_uploader('',
 ## Add in sliders.
 confidence_threshold = st.sidebar.slider('Confidence threshold: What is the minimum acceptable confidence level for displaying a bounding box?', 0.0, 1.0, 0.5, 0.01)
 overlap_threshold = st.sidebar.slider('Overlap threshold: What is the maximum amount of overlap permitted between visible bounding boxes?', 0.0, 1.0, 0.5, 0.01)
-
-##########
-##### Set up main app.
-##########
 
 ## Title.
 st.write(f'# {model} Object Detection')
